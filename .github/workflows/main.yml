@@ -13,7 +13,7 @@ env:
   # 自定义配置文件的方法
   # sed 在Modify pref.ini by sed步骤中，用sed命令修改配置文件
   # files 使用本项目中/files文件夹中的所有文件
-  modify_method: 'files'
+  modify_method: 'sed'
 
 on:
   # 定时任务，格式：minute(0 - 59) hour(0 - 23) day_of_the month (1 - 31) month(1 - 12 or JAN-DEC) day of the week (0 - 6 or SUN-SAT)
@@ -40,7 +40,7 @@ on:
         required: false
         default: 'latest'
       modify_method:
-        description: 'modify configuration file by sed or /files'
+        description: 'modify configuration file by sed or files'
         required: false
         default: 'sed'
 
@@ -153,7 +153,7 @@ jobs:
           cp -f subconverter/pref.example.ini subconverter/pref.ini
         fi
         sed -i 's/api_mode=false/api_mode=true/g' subconverter/pref.ini
-        sed -i 's/managed_config_prefix=http:\/\/127.0.0.1:25500/managed_config_prefix=https:\/\/sub-beta.vercel.app/g' subconverter/pref.ini
+        sed -i 's/managed_config_prefix=http:\/\/127.0.0.1:25500/managed_config_prefix=https:\/\/subc-now.vercel.app/g' subconverter/pref.ini
         sed -i 's/async_fetch_ruleset=false/async_fetch_ruleset=true/g' subconverter/pref.ini
         sed -i 's/max_concurrent_threads=./max_concurrent_threads=1/g' subconverter/pref.ini
     - name: Modify pref.ini by files
