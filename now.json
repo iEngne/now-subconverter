@@ -13,7 +13,7 @@
             "use": "now-static-bin",
             "config": {
                 "port": 25500,
-                "timeout": 10000,
+                "timeout": 100000,
                 "includeFiles": [
                     "subconverter/**"
                 ]
