@@ -34,7 +34,7 @@ on:
       branch:
         description: 'update subconverter from where?(action/build/release)'
         required: false
-        default: 'action'
+        default: 'release'
       tag:
         description: 'specific version tag if branch is "release"'
         required: false
